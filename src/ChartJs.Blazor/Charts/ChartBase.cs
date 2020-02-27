@@ -25,13 +25,13 @@ namespace ChartJs.Blazor.Charts
         /// The width of the canvas HTML element used to draw the chart.
         /// </summary>
         [Parameter]
-        public int Width { get; set; } = 400;
+        public string Width { get; set; } = "100%";
 
         /// <summary>
         /// The height of the canvas HTML element used to draw the chart.
         /// </summary>
         [Parameter]
-        public int Height { get; set; } = 400;
+        public string Height { get; set; } = "200px";
 
         /// <inheritdoc />
         protected override Task OnAfterRenderAsync(bool firstRender)
