@@ -2703,6 +2703,12 @@
             <para>See <see cref="T:ChartJs.Blazor.Util.ColorUtil"/> for working with colors.</para>
             </summary>
         </member>
+        <member name="P:ChartJs.Blazor.ChartJS.LineChart.LineDataset`1.PointBorderColor">
+            <summary>
+            The border color of a point.
+            <para>See <see cref="T:ChartJs.Blazor.Util.ColorUtil"/> for working with colors.</para>
+            </summary>
+        </member>
         <member name="P:ChartJs.Blazor.ChartJS.LineChart.LineDataset`1.BorderColor">
             <summary>
             The color of the line. 

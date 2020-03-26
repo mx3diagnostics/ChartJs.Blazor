@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using ChartJs.Blazor.ChartJS.Common;
 using ChartJs.Blazor.ChartJS.Common.Enums;
 using ChartJs.Blazor.ChartJS.MixedChart;
 using ChartJs.Blazor.Util;
@@ -136,7 +137,13 @@ namespace ChartJs.Blazor.ChartJS.LineChart
         /// The fill color of a point.
         /// <para>See <see cref="ColorUtil"/> for working with colors.</para>
         /// </summary>
-        public string PointBackgroundColor { get; set; }
+        public IndexableOption<string> PointBackgroundColor { get; set; }
+
+        /// <summary>
+        /// The border color of a point.
+        /// <para>See <see cref="ColorUtil"/> for working with colors.</para>
+        /// </summary>
+        public IndexableOption<string> PointBorderColor { get; set; }
 
         /// <summary>
         /// The color of the line. 
