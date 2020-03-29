@@ -206,17 +206,16 @@ class ChartJsInterop {
     }
     WireUpOptionsOnClickFunc(config) {
         let getDefaultFunc = function (type) {
-            var _a;
             let defaults = Chart.defaults[type] || Chart.defaults.global;
-            return ((_a = defaults) === null || _a === void 0 ? void 0 : _a.onClick) || undefined;
+            return (defaults === null || defaults === void 0 ? void 0 : defaults.onClick) || undefined;
         };
         config.options.onClick = this.GetHandler(config.options.onClick, getDefaultFunc(config.type));
     }
     WireUpOptionsOnHoverFunc(config) {
         let getDefaultFunc = function (type) {
-            var _a, _b;
+            var _a;
             let defaults = Chart.defaults[type] || Chart.defaults.global;
-            return ((_b = (_a = defaults) === null || _a === void 0 ? void 0 : _a.hover) === null || _b === void 0 ? void 0 : _b.onHover) || undefined;
+            return ((_a = defaults === null || defaults === void 0 ? void 0 : defaults.hover) === null || _a === void 0 ? void 0 : _a.onHover) || undefined;
         };
         if (config.options.hover) {
             config.options.hover.onHover = this.GetHandler(config.options.hover.onHover, getDefaultFunc(config.type));
@@ -224,17 +223,17 @@ class ChartJsInterop {
     }
     WireUpLegendOnClick(config) {
         let getDefaultHandler = type => {
-            var _a, _b, _c, _d;
+            var _a, _b, _c;
             let chartDefaults = Chart.defaults[type];
-            return ((_b = (_a = chartDefaults) === null || _a === void 0 ? void 0 : _a.legend) === null || _b === void 0 ? void 0 : _b.onClick) || ((_d = (_c = Chart.defaults.global) === null || _c === void 0 ? void 0 : _c.legend) === null || _d === void 0 ? void 0 : _d.onClick) || undefined;
+            return ((_a = chartDefaults === null || chartDefaults === void 0 ? void 0 : chartDefaults.legend) === null || _a === void 0 ? void 0 : _a.onClick) || ((_c = (_b = Chart.defaults.global) === null || _b === void 0 ? void 0 : _b.legend) === null || _c === void 0 ? void 0 : _c.onClick) || undefined;
         };
         config.options.legend.onClick = this.GetHandler(config.options.legend.onClick, getDefaultHandler(config.type));
     }
     WireUpLegendOnHover(config) {
         let getDefaultFunc = function (type) {
-            var _a, _b, _c, _d;
+            var _a, _b, _c;
             let chartDefaults = Chart.defaults[type];
-            return ((_b = (_a = chartDefaults) === null || _a === void 0 ? void 0 : _a.legend) === null || _b === void 0 ? void 0 : _b.onHover) || ((_d = (_c = Chart.defaults.global) === null || _c === void 0 ? void 0 : _c.legend) === null || _d === void 0 ? void 0 : _d.onHover) || undefined;
+            return ((_a = chartDefaults === null || chartDefaults === void 0 ? void 0 : chartDefaults.legend) === null || _a === void 0 ? void 0 : _a.onHover) || ((_c = (_b = Chart.defaults.global) === null || _b === void 0 ? void 0 : _b.legend) === null || _c === void 0 ? void 0 : _c.onHover) || undefined;
         };
         config.options.legend.onHover = this.GetHandler(config.options.legend.onHover, getDefaultFunc(config.type));
     }
