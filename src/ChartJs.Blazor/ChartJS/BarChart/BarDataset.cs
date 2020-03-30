@@ -1,4 +1,4 @@
-﻿using ChartJs.Blazor.ChartJS.Common;
+using ChartJs.Blazor.ChartJS.Common;
 using ChartJs.Blazor.ChartJS.Common.Enums;
 using ChartJs.Blazor.ChartJS.MixedChart;
 using ChartJs.Blazor.Util;
@@ -102,5 +102,16 @@ namespace ChartJs.Blazor.ChartJS.BarChart
         /// Gets or sets the stroke width of the bars when hovered.
         /// </summary>
         public IndexableOption<int> HoverBorderWidth { get; set; }
+
+        /// <summary>
+        /// Gets or sets the percentage (0-1) of the available width each bar should be within the category width.
+        /// 1.0 will take the whole category width and put the bars right next to each other.
+        /// </summary>
+        public double BarPercentage { get; set; } = 0.9;
+
+        /// <summary>
+        /// Gets or sets the percentage (0-1) of the available width each category should be within the sample width.
+        /// </summary>
+        public double CategoryPercentage { get; set; } = 0.8;
     }
 }

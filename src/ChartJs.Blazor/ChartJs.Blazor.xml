@@ -15,17 +15,6 @@
             Creates a new instance of the <see cref="T:ChartJs.Blazor.ChartJS.BarChart.Axes.BarCategoryAxis"/> class.
             </summary>
         </member>
-        <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarCategoryAxis.BarPercentage">
-            <summary>
-            Gets or sets the percentage (0-1) of the available width each bar should be within the category width.
-            1.0 will take the whole category width and put the bars right next to each other.
-            </summary>
-        </member>
-        <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarCategoryAxis.CategoryPercentage">
-            <summary>
-            Gets or sets the percentage (0-1) of the available width each category should be within the sample width.
-            </summary>
-        </member>
         <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarCategoryAxis.BarThickness">
             <summary>
             Gets or sets the width of each bar in pixels.
@@ -70,17 +59,6 @@
         <member name="M:ChartJs.Blazor.ChartJS.BarChart.Axes.BarLinearCartesianAxis.#ctor">
             <summary>
             Creates a new instance of the <see cref="T:ChartJs.Blazor.ChartJS.BarChart.Axes.BarLinearCartesianAxis"/> class.
-            </summary>
-        </member>
-        <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarLinearCartesianAxis.BarPercentage">
-            <summary>
-            Gets or sets the percentage (0-1) of the available width each bar should be within the category width.
-            1.0 will take the whole category width and put the bars right next to each other.
-            </summary>
-        </member>
-        <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarLinearCartesianAxis.CategoryPercentage">
-            <summary>
-            Gets or sets the percentage (0-1) of the available width each category should be within the sample width.
             </summary>
         </member>
         <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarLinearCartesianAxis.BarThickness">
@@ -129,17 +107,6 @@
             Creates a new instance of the <see cref="T:ChartJs.Blazor.ChartJS.BarChart.Axes.BarLogarithmicAxis"/> class.
             </summary>
         </member>
-        <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarLogarithmicAxis.BarPercentage">
-            <summary>
-            Gets or sets the percentage (0-1) of the available width each bar should be within the category width.
-            1.0 will take the whole category width and put the bars right next to each other.
-            </summary>
-        </member>
-        <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarLogarithmicAxis.CategoryPercentage">
-            <summary>
-            Gets or sets the percentage (0-1) of the available width each category should be within the sample width.
-            </summary>
-        </member>
         <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarLogarithmicAxis.BarThickness">
             <summary>
             Gets or sets the width of each bar in pixels.
@@ -184,17 +151,6 @@
         <member name="M:ChartJs.Blazor.ChartJS.BarChart.Axes.BarTimeAxis.#ctor">
             <summary>
             Creates a new instance of the <see cref="T:ChartJs.Blazor.ChartJS.BarChart.Axes.BarTimeAxis"/> class.
-            </summary>
-        </member>
-        <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarTimeAxis.BarPercentage">
-            <summary>
-            Gets or sets the percentage (0-1) of the available width each bar should be within the category width.
-            1.0 will take the whole category width and put the bars right next to each other.
-            </summary>
-        </member>
-        <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarTimeAxis.CategoryPercentage">
-            <summary>
-            Gets or sets the percentage (0-1) of the available width each category should be within the sample width.
             </summary>
         </member>
         <member name="P:ChartJs.Blazor.ChartJS.BarChart.Axes.BarTimeAxis.BarThickness">
@@ -347,6 +303,17 @@
         <member name="P:ChartJs.Blazor.ChartJS.BarChart.BarDataset`1.HoverBorderWidth">
             <summary>
             Gets or sets the stroke width of the bars when hovered.
+            </summary>
+        </member>
+        <member name="P:ChartJs.Blazor.ChartJS.BarChart.BarDataset`1.BarPercentage">
+            <summary>
+            Gets or sets the percentage (0-1) of the available width each bar should be within the category width.
+            1.0 will take the whole category width and put the bars right next to each other.
+            </summary>
+        </member>
+        <member name="P:ChartJs.Blazor.ChartJS.BarChart.BarDataset`1.CategoryPercentage">
+            <summary>
+            Gets or sets the percentage (0-1) of the available width each category should be within the sample width.
             </summary>
         </member>
         <member name="T:ChartJs.Blazor.ChartJS.BarChart.BarOptions">

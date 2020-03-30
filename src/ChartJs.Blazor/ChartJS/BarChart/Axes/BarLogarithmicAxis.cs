@@ -15,22 +15,11 @@ namespace ChartJs.Blazor.ChartJS.BarChart.Axes
         public BarLogarithmicAxis()
         {
             GridLines = new GridLines()
-			{
-				OffsetGridLines = false
-			};
-			Offset = false;
+            {
+                OffsetGridLines = false
+            };
+            Offset = false;
         }
-
-        /// <summary>
-        /// Gets or sets the percentage (0-1) of the available width each bar should be within the category width.
-        /// 1.0 will take the whole category width and put the bars right next to each other.
-        /// </summary>
-        public double BarPercentage { get; set; } = 0.9;
-
-        /// <summary>
-        /// Gets or sets the percentage (0-1) of the available width each category should be within the sample width.
-        /// </summary>
-        public double CategoryPercentage { get; set; } = 0.8;
 
         /// <summary>
         /// Gets or sets the width of each bar in pixels.
