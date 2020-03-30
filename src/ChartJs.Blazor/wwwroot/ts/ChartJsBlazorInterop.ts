@@ -1,14 +1,14 @@
-﻿/// <reference path="ChartJsInterop.ts" />
+/// <reference path="ChartJsInterop.ts" />
 /// <reference path="MomentJsInterop.ts" />
 
 function AttachChartJsInterop(): void {
-    window[ChartJsInterop.name] = new ChartJsInterop();
+    (<any>window).ChartJsInterop = new ChartJsInterop();
 }
 
 AttachChartJsInterop();
 
 function AttachMomentJsInterop(): void {
-    window[MomentJsInterop.name] = new MomentJsInterop();
+    (<any>window).MomentJsInterop = new MomentJsInterop();
 }
 
 AttachMomentJsInterop();
