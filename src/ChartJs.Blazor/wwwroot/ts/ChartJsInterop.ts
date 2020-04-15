@@ -1,9 +1,13 @@
 /* Set up all the chartjs interop stuff */
 
 /// <reference path="types/Chart.min.d.ts" />   
+/// <reference path="types/canvas2svg.d.ts" />
 
 interface ChartConfiguration extends Chart.ChartConfiguration {
     canvasId: string;
+    svgRender: boolean;
+    svgWidth: number;
+    svgHeight: number;
 }
 
 interface DotNetType {
@@ -19,6 +23,7 @@ declare var DotNet: DotNetType;
 class ChartJsInterop {
 
     BlazorCharts = new Map<string, Chart>();
+    SvgRenderers = new Map<string, C2S>();
 
     public SetupChart(config: ChartConfiguration): boolean {
         if (!this.BlazorCharts.has(config.canvasId)) {
@@ -26,6 +31,7 @@ class ChartJsInterop {
                 config.options.legend = {};
             let thisChart = this.initializeChartjsChart(config);
             this.BlazorCharts.set(config.canvasId, thisChart);
+            this.RenderIfSvg(config);
             return true;
         } else {
             return this.UpdateChart(config);
@@ -53,6 +59,7 @@ class ChartJsInterop {
         });
 
         myChart.update();
+        this.RenderIfSvg(config);
         return true;
     }
 
@@ -96,8 +103,22 @@ class ChartJsInterop {
         config.data.labels.forEach(l => myChart.config.data.labels.push(l));
     }
 
+    private RenderIfSvg(config: ChartConfiguration) {
+        if (config.svgRender) {
+            let container = document.getElementById(config.canvasId);
+            container.textContent = '';
+            container.append(this.SvgRenderers[config.canvasId].getSvg());
+        }
+    }
+
     private initializeChartjsChart(config: ChartConfiguration): Chart {
-        let ctx = <HTMLCanvasElement>document.getElementById(config.canvasId);
+        var ctx: C2S | HTMLCanvasElement;
+        if (config.svgRender) {
+            ctx = new C2S(config.svgWidth, config.svgHeight);
+            this.SvgRenderers[config.canvasId] = ctx;
+        } else {
+            ctx = <HTMLCanvasElement>document.getElementById(config.canvasId);
+        }
 
         this.WireUpFunctions(config);
 

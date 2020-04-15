@@ -190,7 +190,7 @@
         </member>
         <member name="T:ChartJs.Blazor.ChartJS.BarChart.BarConfig">
             <summary>
-            Config for a <see cref="T:ChartJs.Blazor.Charts.ChartJsBarChart"/>.
+            Config for a <see cref="!:Charts.ChartJsBarChart"/>.
             </summary>
         </member>
         <member name="M:ChartJs.Blazor.ChartJS.BarChart.BarConfig.#ctor(ChartJs.Blazor.ChartJS.Common.Enums.ChartType)">
@@ -220,7 +220,7 @@
         </member>
         <member name="T:ChartJs.Blazor.ChartJS.BarChart.BarDataset`1">
             <summary>
-            A dataset for a <see cref="T:ChartJs.Blazor.Charts.ChartJsBarChart"/>.
+            A dataset for a <see cref="!:Charts.ChartJsBarChart"/>.
             </summary>
             <para>As per documentation here: http://www.chartjs.org/docs/latest/charts/bar.html#dataset-properties. </para>
             <typeparam name="TData">Defines the type of data in this dataset. Use Wrappers from <see cref="N:ChartJs.Blazor.ChartJS.Common.Wrappers"/> for value types.</typeparam>
@@ -323,7 +323,7 @@
         </member>
         <member name="P:ChartJs.Blazor.ChartJS.BarChart.BarOptions.Scales">
             <summary>
-            Gets or sets the scales for the <see cref="T:ChartJs.Blazor.Charts.ChartJsBarChart"/>.
+            Gets or sets the scales for the <see cref="!:ChartJsBarChart"/>.
             </summary>
         </member>
         <member name="T:ChartJs.Blazor.ChartJS.BarChart.BarScales">
@@ -2499,7 +2499,7 @@
         </member>
         <member name="T:ChartJs.Blazor.ChartJS.LineChart.LineConfig">
             <summary>
-            Config for a <see cref="T:ChartJs.Blazor.Charts.ChartJsLineChart"/>
+            Config for a <see cref="!:Charts.ChartJsLineChart"/>
             </summary>
         </member>
         <member name="M:ChartJs.Blazor.ChartJS.LineChart.LineConfig.#ctor">
@@ -2542,7 +2542,7 @@
         </member>
         <member name="T:ChartJs.Blazor.ChartJS.LineChart.LineDataset`1">
             <summary>
-            A dataset for a <see cref="T:ChartJs.Blazor.Charts.ChartJsLineChart"/>
+            A dataset for a <see cref="!:Charts.ChartJsLineChart"/>
             </summary>
             <typeparam name="TData">Defines the type of data in this dataset. Use Wrappers from <see cref="N:ChartJs.Blazor.ChartJS.Common.Wrappers"/> for value types.</typeparam>
         </member>
@@ -2846,7 +2846,7 @@
         </member>
         <member name="T:ChartJs.Blazor.ChartJS.PieChart.PieDataset">
             <summary>
-            A dataset for a <see cref="T:ChartJs.Blazor.Charts.ChartJsPieChart"/>
+            A dataset for a <see cref="!:Charts.ChartJsPieChart"/>
             </summary>
         </member>
         <member name="P:ChartJs.Blazor.ChartJS.PieChart.PieDataset.Type">
@@ -2940,7 +2940,7 @@
         </member>
         <member name="T:ChartJs.Blazor.ChartJS.PolarAreaChart.PolarAreaConfig">
             <summary>
-            Config for a <see cref="T:ChartJs.Blazor.Charts.ChartJsPolarAreaChart"/>
+            Config for a <see cref="!:ChartJsPolarAreaChart"/>
             </summary>
         </member>
         <member name="M:ChartJs.Blazor.ChartJS.PolarAreaChart.PolarAreaConfig.#ctor">
@@ -2965,7 +2965,7 @@
         </member>
         <member name="T:ChartJs.Blazor.ChartJS.PolarAreaChart.PolarAreaDataset">
             <summary>
-            A dataset for a <see cref="T:ChartJs.Blazor.Charts.ChartJsPolarAreaChart"/>
+            A dataset for a <see cref="!:ChartJsPolarAreaChart"/>
             </summary>
         </member>
         <member name="P:ChartJs.Blazor.ChartJS.PolarAreaChart.PolarAreaDataset.Type">
@@ -3286,6 +3286,12 @@
              <para>Call this method after you've changed something in the chart#s configuration</para>
              </summary>
              <returns></returns>
+        </member>
+        <member name="T:ChartJs.Blazor.Charts.ChartJsChart`1">
+            <summary>
+            Chart.js
+            </summary>
+            <typeparam name="Type">Chart config type</typeparam>
         </member>
         <member name="T:ChartJs.Blazor.Util.ColorUtil">
             <summary>

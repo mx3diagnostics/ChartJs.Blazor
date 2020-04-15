@@ -1,0 +1,11 @@
+@typeparam Type 
+@inherits ChartJs.Blazor.Charts.ChartBase<Type>
+
+@if (Config.SvgRender)
+{
+    <div id="@Config.CanvasId"></div>
+}
+else
+{
+    <canvas id="@Config.CanvasId" style="width: @Width; height: @Height;"></canvas>
+}

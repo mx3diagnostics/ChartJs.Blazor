@@ -27,6 +27,10 @@ namespace ChartJs.Blazor.ChartJS.Common
         /// The id for the html canvas element associated with this chart
         /// </summary>
         public string CanvasId { get; } = Guid.NewGuid().ToString();
+
+        public bool SvgRender { get; set; } = false;
+        public int SvgWidth { get; set; } = 320;
+        public int SvgHeight { get; set; } = 200;
     }
 
     /// <summary>

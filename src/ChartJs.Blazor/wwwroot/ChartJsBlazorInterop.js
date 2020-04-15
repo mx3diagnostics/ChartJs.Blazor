@@ -36,10 +36,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 /// <reference path="types/Chart.min.d.ts" />   
+/// <reference path="types/canvas2svg.d.ts" />
 var ChartJsInterop = /** @class */ (function () {
     function ChartJsInterop() {
         var _this = this;
         this.BlazorCharts = new Map();
+        this.SvgRenderers = new Map();
         /**
          * Given an IClickHandler (see the C# code), it tries to recover the referenced handler.
          * It currently supports Javascript functions, which are expected to be attached to the window object; .Net static functions and .Net object instance methods
@@ -131,6 +133,7 @@ var ChartJsInterop = /** @class */ (function () {
                 config.options.legend = {};
             var thisChart = this.initializeChartjsChart(config);
             this.BlazorCharts.set(config.canvasId, thisChart);
+            this.RenderIfSvg(config);
             return true;
         }
         else {
@@ -152,6 +155,7 @@ var ChartJsInterop = /** @class */ (function () {
             myChart.config.options[e[0]] = e[1];
         });
         myChart.update();
+        this.RenderIfSvg(config);
         return true;
     };
     ChartJsInterop.prototype.HandleDatasets = function (myChart, config) {
@@ -190,8 +194,22 @@ var ChartJsInterop = /** @class */ (function () {
         // add all the new labels
         config.data.labels.forEach(function (l) { return myChart.config.data.labels.push(l); });
     };
+    ChartJsInterop.prototype.RenderIfSvg = function (config) {
+        if (config.svgRender) {
+            var container = document.getElementById(config.canvasId);
+            container.textContent = '';
+            container.append(this.SvgRenderers[config.canvasId].getSvg());
+        }
+    };
     ChartJsInterop.prototype.initializeChartjsChart = function (config) {
-        var ctx = document.getElementById(config.canvasId);
+        var ctx;
+        if (config.svgRender) {
+            ctx = new C2S(config.svgWidth, config.svgHeight);
+            this.SvgRenderers[config.canvasId] = ctx;
+        }
+        else {
+            ctx = document.getElementById(config.canvasId);
+        }
         this.WireUpFunctions(config);
         var myChart = new Chart(ctx, config);
         return myChart;

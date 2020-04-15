@@ -38,6 +38,10 @@ Delta updates result in an animation to the new value instead of a complete redr
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\ts\types\canvas2svg.d.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.2" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
