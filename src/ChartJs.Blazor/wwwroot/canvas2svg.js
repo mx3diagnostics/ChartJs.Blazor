@@ -265,6 +265,7 @@
         this.__root.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
         this.__root.setAttribute("width", this.width);
         this.__root.setAttribute("height", this.height);
+        this.__root.setAttribute("viewBox", "0 0 " + this.width + " " + this.height);
 
         //make sure we don't generate the same ids in defs
         this.__ids = {};
