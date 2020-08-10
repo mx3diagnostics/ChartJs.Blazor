@@ -265,9 +265,12 @@ class ChartJsInterop {
                     const assemblyName = onClickStatickHandler.assemblyName;
                     const methodName = onClickStatickHandler.methodName;
                     return async (sender, args) => {
+                        // add single element under click
+                        let e = this.BlazorCharts.get(sender.target.id).getElementAtEvent(sender)[0];
+                        args = e ? { 'index': e['_index'], 'datasetIndex': e['_datasetIndex'] } : null;
 
-                        // This is sometimes necessary in order to avoid circular reference errors during JSON serialization
-                        args = this.GetCleanArgs(args);
+                        //// This is sometimes necessary in order to avoid circular reference errors during JSON serialization
+                        //args = this.GetCleanArgs(args);
 
                         await DotNet.invokeMethodAsync(assemblyName, methodName, sender, args);
                     };
@@ -283,9 +286,12 @@ class ChartJsInterop {
                     const methodName = onClickInstanceHandler.methodName;
 
                     return async (sender, args) => {
+                        // add single element under click
+                        let e = this.BlazorCharts.get(sender.target.id).getElementAtEvent(sender)[0];
+                        args = e ? { 'index': e['_index'], 'datasetIndex': e['_datasetIndex'] } : null;
 
-                        // This is sometimes necessary in order to avoid circular reference errors during JSON serialization
-                        args = this.GetCleanArgs(args);
+                        //// This is sometimes necessary in order to avoid circular reference errors during JSON serialization
+                        //args = this.GetCleanArgs(args);
 
                         await instanceRef.invokeMethodAsync(methodName, sender, args);
                     };

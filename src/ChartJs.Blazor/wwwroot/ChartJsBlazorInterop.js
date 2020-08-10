@@ -76,13 +76,18 @@ var ChartJsInterop = /** @class */ (function () {
                         var assemblyName = onClickStatickHandler.assemblyName;
                         var methodName = onClickStatickHandler.methodName;
                         return function (sender, args) { return __awaiter(_this, void 0, void 0, function () {
+                            var e;
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0:
-                                        // This is sometimes necessary in order to avoid circular reference errors during JSON serialization
-                                        args = this.GetCleanArgs(args);
+                                        e = this.BlazorCharts.get(sender.target.id).getElementAtEvent(sender)[0];
+                                        args = e ? { 'index': e['_index'], 'datasetIndex': e['_datasetIndex'] } : null;
+                                        //// This is sometimes necessary in order to avoid circular reference errors during JSON serialization
+                                        //args = this.GetCleanArgs(args);
                                         return [4 /*yield*/, DotNet.invokeMethodAsync(assemblyName, methodName, sender, args)];
                                     case 1:
+                                        //// This is sometimes necessary in order to avoid circular reference errors during JSON serialization
+                                        //args = this.GetCleanArgs(args);
                                         _a.sent();
                                         return [2 /*return*/];
                                 }
@@ -99,13 +104,18 @@ var ChartJsInterop = /** @class */ (function () {
                         var instanceRef = onClickInstanceHandler.instanceRef;
                         var methodName = onClickInstanceHandler.methodName;
                         return function (sender, args) { return __awaiter(_this, void 0, void 0, function () {
+                            var e;
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0:
-                                        // This is sometimes necessary in order to avoid circular reference errors during JSON serialization
-                                        args = this.GetCleanArgs(args);
+                                        e = this.BlazorCharts.get(sender.target.id).getElementAtEvent(sender)[0];
+                                        args = e ? { 'index': e['_index'], 'datasetIndex': e['_datasetIndex'] } : null;
+                                        //// This is sometimes necessary in order to avoid circular reference errors during JSON serialization
+                                        //args = this.GetCleanArgs(args);
                                         return [4 /*yield*/, instanceRef.invokeMethodAsync(methodName, sender, args)];
                                     case 1:
+                                        //// This is sometimes necessary in order to avoid circular reference errors during JSON serialization
+                                        //args = this.GetCleanArgs(args);
                                         _a.sent();
                                         return [2 /*return*/];
                                 }
