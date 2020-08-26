@@ -54,6 +54,9 @@ namespace ChartJs.Blazor.ChartJS.MixedChart
         /// <exception cref="T:System.ArgumentException"><paramref name="index">index</paramref> and <paramref name="count">count</paramref> do not denote a valid range of elements in the <see cref="T:System.Collections.Generic.List`1"></see>.</exception>
         public void RemoveRange(int index, int count) => _data.RemoveRange(index, count);
 
+        /// <summary>Removes all elements from the <see cref="T:System.Collections.Generic.List`1"></see>.</summary>
+        public void Clear() => _data.Clear();
+
         /// <summary>
         /// The data contained in this dataset. Covariant through <see cref="IMixableDataset{TData}"/>.
         /// </summary>
