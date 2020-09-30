@@ -21,6 +21,16 @@ namespace ChartJs.Blazor.ChartJS
         private const string ChartJsInteropName = "ChartJsInterop";
 
         /// <summary>
+        /// Clear all existing charts on the page.
+        /// </summary>
+        /// <param name="jsRuntime"></param>
+        /// <returns></returns>
+        public static ValueTask ClearCharts(this IJSRuntime jsRuntime)
+        {
+            return jsRuntime.InvokeVoidAsync($"{ChartJsInteropName}.ClearCharts");
+        }
+
+        /// <summary>
         /// Set up a new chart. Call only once.
         /// </summary>
         /// <param name="jsRuntime"></param>

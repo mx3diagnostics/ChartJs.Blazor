@@ -25,6 +25,12 @@ class ChartJsInterop {
     BlazorCharts = new Map<string, Chart>();
     SvgRenderers = new Map<string, C2S>();
 
+    public ClearCharts()
+    {
+        this.BlazorCharts.clear();
+        this.SvgRenderers.clear();
+    }
+
     public SetupChart(config: ChartConfiguration): boolean {
         if (!this.BlazorCharts.has(config.canvasId)) {
             if (!config.options.legend)

@@ -137,6 +137,10 @@ var ChartJsInterop = /** @class */ (function () {
                 }) : args;
         };
     }
+    ChartJsInterop.prototype.ClearCharts = function () {
+        this.BlazorCharts.clear();
+        this.SvgRenderers.clear();
+    };
     ChartJsInterop.prototype.SetupChart = function (config) {
         if (!this.BlazorCharts.has(config.canvasId)) {
             if (!config.options.legend)

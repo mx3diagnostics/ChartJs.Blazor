@@ -427,6 +427,13 @@
             Interop layer with the included/referenced ChartJs
             </summary>
         </member>
+        <member name="M:ChartJs.Blazor.ChartJS.ChartJsInterop.ClearCharts(Microsoft.JSInterop.IJSRuntime)">
+            <summary>
+            Clear all existing charts on the page.
+            </summary>
+            <param name="jsRuntime"></param>
+            <returns></returns>
+        </member>
         <member name="M:ChartJs.Blazor.ChartJS.ChartJsInterop.SetupChart(Microsoft.JSInterop.IJSRuntime,ChartJs.Blazor.ChartJS.Common.ConfigBase)">
             <summary>
             Set up a new chart. Call only once.
